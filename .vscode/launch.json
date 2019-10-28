@@ -1,0 +1,34 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - Summer",
+      "request": "launch",
+      "mainClass": "Summer"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - SummerTrip",
+      "request": "launch",
+      "mainClass": "SummerTrip"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - RPI",
+      "request": "launch",
+      "mainClass": "RPI"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - Gerry",
+      "request": "launch",
+      "mainClass": "Gerry"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - MissingNumber",
+      "request": "launch",
+      "mainClass": "MissingNumber"
+    }
+  ]
+}
