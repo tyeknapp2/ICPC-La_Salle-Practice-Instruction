@@ -24,15 +24,20 @@ public class CircuitMath {
       if (s.charAt(i) == ' ') {
         continue;
       } else if (s.charAt(i) == '*') {
-        c.push((c.pop() && c.pop()));
+        boolean t = c.pop();
+        boolean h = c.pop();
+        c.push(t && h);
       } else if (s.charAt(i) == '+') {
-        c.push((c.pop() || c.pop()));
+        boolean t = c.pop();
+        boolean h = c.pop();
+        c.push(t || h);
       } else if (s.charAt(i) == '-') {
-        c.push((!c.pop()));
+        boolean t = !c.pop();
+        c.push(t);
       } else {
         c.push(v.get(s.charAt(i)));
       }
     }
-    System.out.println((c.pop() ? "T" : "F"));
+    System.out.println((c.pop() ? 'T' : 'F'));
   }
 }
