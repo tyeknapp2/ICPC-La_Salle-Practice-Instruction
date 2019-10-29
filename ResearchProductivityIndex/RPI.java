@@ -1,8 +1,8 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 
+//this isn't functional at all
 public class RPI {
   public static void main(String[] args) {
     Scanner scan = new Scanner(System.in);
