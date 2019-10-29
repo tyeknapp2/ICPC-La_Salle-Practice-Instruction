@@ -2,6 +2,12 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CodeLens (Launch) - GlitchBot",
+      "request": "launch",
+      "mainClass": "GlitchBot"
+    },
+    {
+      "type": "java",
       "name": "CodeLens (Launch) - DasBlinkenlights",
       "request": "launch",
       "mainClass": "DasBlinkenlights"
