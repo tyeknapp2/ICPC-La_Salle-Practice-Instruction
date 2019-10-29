@@ -12,6 +12,7 @@ public class CircuitMath {
     Scanner scan = new Scanner(System.in);
     int x = scan.nextInt();
     HashMap<Character, Boolean> v = new HashMap<Character, Boolean>();
+    Stack<Boolean> c = new Stack<Boolean>();
     for (char i = 'A'; i < 'A' + x; i++) {
       v.put(i, (scan.next().equals("T") ? true : false));
     }
@@ -19,5 +20,19 @@ public class CircuitMath {
     String s = scan.nextLine();
     scan.close();
 
+    for (int i = 0; i < s.length(); i++) {
+      if (s.charAt(i) == ' ') {
+        continue;
+      } else if (s.charAt(i) == '*') {
+        c.push((c.pop() && c.pop()));
+      } else if (s.charAt(i) == '+') {
+        c.push((c.pop() || c.pop()));
+      } else if (s.charAt(i) == '-') {
+        c.push((!c.pop()));
+      } else {
+        c.push(v.get(s.charAt(i)));
+      }
+    }
+    System.out.println((c.pop() ? "T" : "F"));
   }
 }
