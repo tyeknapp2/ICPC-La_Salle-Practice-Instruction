@@ -35,6 +35,7 @@ public class RPI {
     return Math.pow((double) a, (double) a / (double) s);
   }
 
+  // STUMPED HERE
   public static double calcP(ArrayList<Integer> sub, int i) {
     double prob = 0;
 
