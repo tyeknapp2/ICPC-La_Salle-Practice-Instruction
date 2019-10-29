@@ -13,5 +13,12 @@ public class GlitchBot {
       instructions.add(scan.nextLine());
     }
     scan.close();
+
+
+  }
+
+  public static boolean arrivalCheck() {
+    
+    return false;
   }
 }
