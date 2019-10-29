@@ -2,6 +2,12 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CodeLens (Launch) - CircuitMath",
+      "request": "launch",
+      "mainClass": "CircuitMath"
+    },
+    {
+      "type": "java",
       "name": "CodeLens (Launch) - Summer",
       "request": "launch",
       "mainClass": "Summer"
