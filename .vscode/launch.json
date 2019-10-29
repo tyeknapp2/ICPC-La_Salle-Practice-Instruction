@@ -2,6 +2,12 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CodeLens (Launch) - EncodeDecode",
+      "request": "launch",
+      "mainClass": "EncodeDecode"
+    },
+    {
+      "type": "java",
       "name": "CodeLens (Launch) - CircuitMath",
       "request": "launch",
       "mainClass": "CircuitMath"
