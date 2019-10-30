@@ -2,6 +2,12 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CodeLens (Launch) - OddGnome",
+      "request": "launch",
+      "mainClass": "OddGnome"
+    },
+    {
+      "type": "java",
       "name": "CodeLens (Launch) - GlitchBot",
       "request": "launch",
       "mainClass": "GlitchBot"
