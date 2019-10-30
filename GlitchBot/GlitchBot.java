@@ -16,8 +16,21 @@ public class GlitchBot {
       instructions.add(scan.nextLine());
     }
     scan.close();
-    
-    
+    boolean repForward = false;
+    boolean repRight = false;
+    boolean repLeft = false;
+    int z = -1;
+    for (int i = 0; i < instructions.size(); i++) {
+      repForward = arrivalCheck(instructions, x, y, 0, 0, "North", i, "Forward", 0);
+      repRight = arrivalCheck(instructions, x, y, 0, 0, "North", i, "Right", 0);
+      repLeft = arrivalCheck(instructions, x, y, 0, 0, "North", i, "Left", 0);
+      if (repForward || repRight || repLeft) {
+        z = i;
+        break;
+      }
+    }
+    System.out.println(z + " " + (repForward ? "Forward" : "") + (repLeft ? "Left" : "") + (repRight ? "Right" : ""));
+
   }
 
   public static boolean arrivalCheck(ArrayList<String> intstructions, int goalX, int goalY, int currX, int currY,
