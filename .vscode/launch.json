@@ -2,6 +2,12 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CodeLens (Launch) - ProgressiveScramble",
+      "request": "launch",
+      "mainClass": "ProgressiveScramble"
+    },
+    {
+      "type": "java",
       "name": "CodeLens (Launch) - OddGnome",
       "request": "launch",
       "mainClass": "OddGnome"
