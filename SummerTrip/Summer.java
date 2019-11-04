@@ -159,7 +159,12 @@ public class Summer {
      * all lowercase leaving a very manageable 26 characters to check and our
      * subSequence string could be incredibly long being up to 99999 characters long
      * therefore checking the by possible chars makes a lot of sense. By doing it
-     * this way you bring our algorithm down to simply O(n)=n. (A huge reduction)
+     * this way you bring our algorithm down to simply O(n)=n^2. (A huge reduction)
+     * 
+     * (My O(n) estimates are assuming all the string methods I am using are O(n)=1
+     * which in reality isn't technically true but they are incredibly efficient and
+     * in competition you can pretty much assume that they will never cause you
+     * efficiency problems )
      * 
      * It can be noted that you could implement a hybrid method here that handles
      * strings the first way if they are under length 26 or the second way if they
