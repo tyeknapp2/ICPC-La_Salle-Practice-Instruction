@@ -15,7 +15,6 @@ public class Summer {
     Scanner scan = new Scanner(System.in);
     String calendar = scan.nextLine();
     scan.close();
-    // +++++++++++++++++++++++++++++++++++++++++++
 
     // this intializes what we are trying to keep track of
     int numGoodItineraries = 0;
@@ -36,7 +35,7 @@ public class Summer {
        * itineraries starting at them because any atempt to make an itinerary from
        * them would include at least another a and one of the requirements of our good
        * itinerary is that the starting event must be unique therefore only the last a
-       * in that series of a's an be a valid starting point
+       * in that series of a's can be a valid starting point
        * 
        * Note: due to the way I structured our for loop calendar.charAt(i + 1) will
        * never throw an indexOutOfBounds error
@@ -59,13 +58,13 @@ public class Summer {
        * we only have to check for good itineraries between our starting index and the
        * index of the next occurence of the char at the starting index. This is the
        * reason we trimmed off the starting char in the subSequence declaration so
-       * that checking for an starting char would be trivial. If there is no other
-       * occurence then we want to check all the way to the end of the calendar
-       * string.
+       * that checking for another instance of the starting char would be trivial. If
+       * there is no other occurence then we want to check all the way to the end of
+       * the calendar string.
        * 
        * Also this is the notation for a shortcut if/else statement its very good for
-       * assignments depending on a boolean expression. It works the same as
-       * JavaScript
+       * assignments depending on a boolean expression. It works the same as it does
+       * in JavaScript
        * 
        * (Boolean statement to check) ? toReturnIfTrue : toReturnIfFalse;
        */
@@ -85,7 +84,7 @@ public class Summer {
        * simple. All you have to do is count the number of different letters in
        * subSequence and voila the number of different good itineraries.
        * 
-       * This is proved by two(three?) simple proofs:
+       * This is proved by two theorems:
        * 
        * Theorem one: If a char occurs in the subSequence string, then there exists a
        * first occurence of that char.
@@ -133,7 +132,7 @@ public class Summer {
   /**
    * 
    *
-   * @param input a string containing
+   * @param input a string containing events
    * @return The number of unique letters contained in the input
    */
   public static int numOfDifferentLetters(String input) {
