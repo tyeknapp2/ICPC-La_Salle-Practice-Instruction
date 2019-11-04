@@ -8,7 +8,7 @@ import java.util.Scanner;
  */
 public class Summer {
   public static void main(String[] args) {
-    /**
+    /*
      * This section handles getting the input and it saves it to the variable
      * calendar
      */
@@ -72,7 +72,7 @@ public class Summer {
           ? subSequence.substring(0, subSequence.indexOf(calendar.charAt(i) + ""))
           : subSequence;
 
-      /**
+      /*
        * Finally its time to count our good itineraries. Remember a good intinerary is
        * any sequence of characters where the first and last events are completely
        * unique in that sequence. Repeats in the middle are allowed but the first and
