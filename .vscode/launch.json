@@ -2,6 +2,12 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CodeLens (Launch) - Parade",
+      "request": "launch",
+      "mainClass": "Parade"
+    },
+    {
+      "type": "java",
       "name": "CodeLens (Launch) - ANewAlphabet",
       "request": "launch",
       "mainClass": "ANewAlphabet"
