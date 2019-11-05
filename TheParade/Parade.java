@@ -5,6 +5,8 @@ import java.util.InputMismatchException;
 
 /**
  * Parade
+ * 
+ * @author Tye Knappenberger
  */
 public class Parade {
 
@@ -19,6 +21,18 @@ public class Parade {
         heights.add(scan.nextBigInteger());
       }
       System.out.print("");
+
+      BigInteger maxSoldiers = new BigInteger("0");
+      if (k == 1) {
+        for (int i = 0; i < heights.size() - 1; i++) {
+          heights.set(i, heights.get(i).add(heights.get(i + 1)));
+          if (heights.get(i).andNot(maxSoldiers).equals(BigInteger.ZERO)) {
+            maxSoldiers = heights.get(i);
+          }
+        }
+      }
+
+      System.out.println(maxSoldiers);
     }
     scan.close();
   }

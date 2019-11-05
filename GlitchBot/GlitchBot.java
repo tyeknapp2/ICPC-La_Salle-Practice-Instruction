@@ -25,7 +25,7 @@ public class GlitchBot {
       repRight = arrivalCheck(instructions, x, y, 0, 0, "North", i, "Right", 0);
       repLeft = arrivalCheck(instructions, x, y, 0, 0, "North", i, "Left", 0);
       if (repForward || repRight || repLeft) {
-        z = i;
+        z = i + 1;
         break;
       }
     }
@@ -33,17 +33,17 @@ public class GlitchBot {
 
   }
 
-  public static boolean arrivalCheck(ArrayList<String> intstructions, int goalX, int goalY, int currX, int currY,
+  public static boolean arrivalCheck(ArrayList<String> instructions, int goalX, int goalY, int currX, int currY,
       String currRot, int stepToReplace, String replacementInstruct, int step) {
-    if (step == intstructions.size()) {
+    if (step == instructions.size()) {
       return (currX == goalX && currY == goalY);
     } else if (step == stepToReplace) {
-      return arrivalCheck(intstructions, goalX, goalY, updateX(currX, currRot, replacementInstruct),
+      return arrivalCheck(instructions, goalX, goalY, updateX(currX, currRot, replacementInstruct),
           updateY(currY, currRot, replacementInstruct), updateRot(currRot, replacementInstruct), stepToReplace,
           replacementInstruct, step + 1);
     } else {
-      return arrivalCheck(intstructions, goalX, goalY, updateX(currX, currRot, intstructions.get(step)),
-          updateY(currY, currRot, intstructions.get(step)), updateRot(currRot, intstructions.get(step)), stepToReplace,
+      return arrivalCheck(instructions, goalX, goalY, updateX(currX, currRot, instructions.get(step)),
+          updateY(currY, currRot, instructions.get(step)), updateRot(currRot, instructions.get(step)), stepToReplace,
           replacementInstruct, step + 1);
     }
   }
@@ -53,48 +53,40 @@ public class GlitchBot {
       return initRot;
     } else if (instruct.equals("Right")) {
       switch (initRot.charAt(0)) {
-      case N:
+      case 'N':
         return "East";
-        break;
-      case E:
+      case 'E':
         return "South";
-        break;
-      case S:
+      case 'S':
         return "West";
-        break;
       default:
         return "North";
-        break;
       }
     } else {
       switch (initRot.charAt(0)) {
-      case N:
+      case 'N':
         return "West";
-        break;
-      case E:
+      case 'E':
         return "North";
-        break;
-      case S:
+      case 'S':
         return "East";
-        break;
       default:
         return "South";
-        break;
       }
     }
   }
 
   public static int updateX(int x, String rot, String instruct) {
-    if (intstruct.equals("Forward") && (rot.equals("North") || rot.equals("South")))
-      return (rot.equals("North") ? x + 1 : x - 1);
+    if (instruct.equals("Forward") && (rot.equals("East") || rot.equals("West")))
+      return (rot.equals("East") ? x + 1 : x - 1);
     else
       return x;
 
   }
 
   public static int updateY(int y, String rot, String instruct) {
-    if (intstruct.equals("Forward") && (rot.equals("East") || rot.equals("West")))
-      return (rot.equals("East") ? y + 1 : y - 1);
+    if (instruct.equals("Forward") && (rot.equals("North") || rot.equals("South")))
+      return (rot.equals("North") ? y + 1 : y - 1);
     else
       return y;
 
