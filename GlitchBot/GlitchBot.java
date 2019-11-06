@@ -26,9 +26,6 @@ public class GlitchBot {
     boolean replaceWithLeft = false;
     int numOfReplacedStep = -1;
 
-    /*
-     * This
-     */
     for (int i = 0; i < instructions.size(); i++) {
 
       replaceWithForward = !instructions.get(i).equals("Forward")
@@ -62,11 +59,11 @@ public class GlitchBot {
    * @param currX               This should be passed zero
    * @param currY               This should be passed zero
    * @param currRot             This should be passed "North"
-   * @param stepToReplace       the index of the the instruction to be replace in
+   * @param stepToReplace       The index of the the instruction to be replace in
    *                            the instructions ArrayList
-   * @param replacementInstruct the instruction to do instead;
-   * @param step
-   * @return
+   * @param replacementInstruct The instruction to do instead
+   * @param step                This should be passed zero
+   * @return Whether the replacement got us to the goal destination
    */
   public static boolean arrivalCheck(ArrayList<String> instructions, int goalX, int goalY, int currX, int currY,
       String currRot, int stepToReplace, String replacementInstruct, int step) {
@@ -85,9 +82,9 @@ public class GlitchBot {
 
   /**
    * 
-   * @param initRot  the
-   * @param instruct
-   * @return
+   * @param initRot  The current rotation
+   * @param instruct The instruction to perform
+   * @return The rotation after performing the instruction
    */
   public static String updateRot(String initRot, String instruct) {
     if (instruct.equals("Forward")) {
@@ -119,10 +116,10 @@ public class GlitchBot {
 
   /**
    * 
-   * @param x
-   * @param rot
-   * @param instruct
-   * @return
+   * @param x        The current x-coordinate of the robot
+   * @param rot      The current rotation of the robot
+   * @param instruct The instruction to perform
+   * @return The new x-coordinate of robot after performing the instruction
    */
   public static int updateX(int x, String rot, String instruct) {
     if (instruct.equals("Forward") && (rot.equals("East") || rot.equals("West")))
@@ -134,10 +131,10 @@ public class GlitchBot {
 
   /**
    * 
-   * @param y
-   * @param rot
-   * @param instruct
-   * @return
+   * @param y        The current y-coordinate of the robot
+   * @param rot      The current rotation of the robot
+   * @param instruct The instruction to perform
+   * @return The new y-coordinate of robot after performing the instruction
    */
   public static int updateY(int y, String rot, String instruct) {
     if (instruct.equals("Forward") && (rot.equals("North") || rot.equals("South")))
