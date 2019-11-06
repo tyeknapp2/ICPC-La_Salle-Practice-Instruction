@@ -1,11 +1,14 @@
 import java.util.Scanner;
-
-import javax.lang.model.util.ElementScanner6;
-
 import java.util.ArrayList;
 
+/**
+ * GlitchBot Solution
+ * 
+ * @author Tye Knappenberger
+ */
 public class GlitchBot {
   public static void main(String[] args) {
+    // input handling
     Scanner scan = new Scanner(System.in);
     int x = scan.nextInt();
     int y = scan.nextInt();
@@ -16,23 +19,55 @@ public class GlitchBot {
       instructions.add(scan.nextLine());
     }
     scan.close();
-    boolean repForward = false;
-    boolean repRight = false;
-    boolean repLeft = false;
-    int z = -1;
+
+    // initalization of goal variables
+    boolean replaceWithForward = false;
+    boolean replaceWithRight = false;
+    boolean replaceWithLeft = false;
+    int numOfReplacedStep = -1;
+
+    /*
+     * This
+     */
     for (int i = 0; i < instructions.size(); i++) {
-      repForward = arrivalCheck(instructions, x, y, 0, 0, "North", i, "Forward", 0);
-      repRight = arrivalCheck(instructions, x, y, 0, 0, "North", i, "Right", 0);
-      repLeft = arrivalCheck(instructions, x, y, 0, 0, "North", i, "Left", 0);
-      if (repForward || repRight || repLeft) {
-        z = i + 1;
+
+      replaceWithForward = !instructions.get(i).equals("Forward")
+          ? arrivalCheck(instructions, x, y, 0, 0, "North", i, "Forward", 0)
+          : false;
+      replaceWithRight = !instructions.get(i).equals("Right")
+          ? arrivalCheck(instructions, x, y, 0, 0, "North", i, "Right", 0)
+          : false;
+      replaceWithLeft = !instructions.get(i).equals("Left")
+          ? arrivalCheck(instructions, x, y, 0, 0, "North", i, "Left", 0)
+          : false;
+
+      if (replaceWithForward || replaceWithRight || replaceWithLeft) {
+        numOfReplacedStep = i + 1;
         break;
       }
     }
-    System.out.println(z + " " + (repForward ? "Forward" : "") + (repLeft ? "Left" : "") + (repRight ? "Right" : ""));
+
+    System.out.println(numOfReplacedStep + " " + (replaceWithForward ? "Forward" : "") + (replaceWithLeft ? "Left" : "")
+        + (replaceWithRight ? "Right" : ""));
 
   }
 
+  /**
+   * 
+   * @param instructions        The array list of instructions
+   * @param goalX               This should be passed the X value given in the
+   *                            input
+   * @param goalY               This should be passed the Y value given in the
+   *                            input
+   * @param currX               This should be passed zero
+   * @param currY               This should be passed zero
+   * @param currRot             This should be passed "North"
+   * @param stepToReplace       the index of the the instruction to be replace in
+   *                            the instructions ArrayList
+   * @param replacementInstruct the instruction to do instead;
+   * @param step
+   * @return
+   */
   public static boolean arrivalCheck(ArrayList<String> instructions, int goalX, int goalY, int currX, int currY,
       String currRot, int stepToReplace, String replacementInstruct, int step) {
     if (step == instructions.size()) {
@@ -48,6 +83,12 @@ public class GlitchBot {
     }
   }
 
+  /**
+   * 
+   * @param initRot  the
+   * @param instruct
+   * @return
+   */
   public static String updateRot(String initRot, String instruct) {
     if (instruct.equals("Forward")) {
       return initRot;
@@ -76,6 +117,13 @@ public class GlitchBot {
     }
   }
 
+  /**
+   * 
+   * @param x
+   * @param rot
+   * @param instruct
+   * @return
+   */
   public static int updateX(int x, String rot, String instruct) {
     if (instruct.equals("Forward") && (rot.equals("East") || rot.equals("West")))
       return (rot.equals("East") ? x + 1 : x - 1);
@@ -84,6 +132,13 @@ public class GlitchBot {
 
   }
 
+  /**
+   * 
+   * @param y
+   * @param rot
+   * @param instruct
+   * @return
+   */
   public static int updateY(int y, String rot, String instruct) {
     if (instruct.equals("Forward") && (rot.equals("North") || rot.equals("South")))
       return (rot.equals("North") ? y + 1 : y - 1);
