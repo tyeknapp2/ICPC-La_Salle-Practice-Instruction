@@ -27,14 +27,13 @@ public class GlitchBot {
     int numOfReplacedStep = -1;
 
     for (int i = 0; i < instructions.size(); i++) {
-
-      replaceWithForward = !instructions.get(i).equals("Forward")
+      replaceWithForward = instructions.get(i).charAt(0) != 'F'
           ? arrivalCheck(instructions, x, y, 0, 0, "North", i, "Forward", 0)
           : false;
-      replaceWithRight = !instructions.get(i).equals("Right")
+      replaceWithRight = instructions.get(i).charAt(0) != 'R'
           ? arrivalCheck(instructions, x, y, 0, 0, "North", i, "Right", 0)
           : false;
-      replaceWithLeft = !instructions.get(i).equals("Left")
+      replaceWithLeft = instructions.get(i).charAt(0) != 'L'
           ? arrivalCheck(instructions, x, y, 0, 0, "North", i, "Left", 0)
           : false;
 
