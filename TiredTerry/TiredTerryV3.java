@@ -18,7 +18,6 @@ public class TiredTerryV3 {
     scan.nextLine();
     String s = scan.nextLine();
     scan.close();
-    ArrayList<Integer> foo = new ArrayList<Integer>();
     LinkedList<Character> timer = new LinkedList<Character>();
     int sleep = 0;
     for (int i = s.length() - p; i < s.length(); i++) {
