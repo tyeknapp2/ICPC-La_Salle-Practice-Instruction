@@ -2,6 +2,30 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CodeLens (Launch) - Paladin",
+      "request": "launch",
+      "mainClass": "Paladin"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - Hiss",
+      "request": "launch",
+      "mainClass": "Hiss"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - HeartRate",
+      "request": "launch",
+      "mainClass": "HeartRate"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - Zip",
+      "request": "launch",
+      "mainClass": "Zip"
+    },
+    {
+      "type": "java",
       "name": "CodeLens (Launch) - Parade",
       "request": "launch",
       "mainClass": "Parade"
