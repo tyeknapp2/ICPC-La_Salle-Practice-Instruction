@@ -14,7 +14,8 @@ public class Lineup {
       distToOrder.put(h, i);
       dists.add(h);
     }
-    Collections.sort(h);
+    scan.close();
+    Collections.sort(dists);
     String outString = "1 ";
     for (Integer integer : dists) {
       outString += distToOrder.get(integer) + " ";
