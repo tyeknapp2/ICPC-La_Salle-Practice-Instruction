@@ -2,6 +2,30 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CodeLens (Launch) - TiredTerryV3",
+      "request": "launch",
+      "mainClass": "TiredTerryV3"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - TiredTerryTwo",
+      "request": "launch",
+      "mainClass": "TiredTerryTwo"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - Terry",
+      "request": "launch",
+      "mainClass": "Terry"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - Cake",
+      "request": "launch",
+      "mainClass": "Cake"
+    },
+    {
+      "type": "java",
       "name": "CodeLens (Launch) - Paladin",
       "request": "launch",
       "mainClass": "Paladin"
