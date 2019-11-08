@@ -1,7 +1,11 @@
 import java.util.Scanner;
 
 /**
+ * This one timeouts
+ * 
  * Terry
+ * 
+ * @author Tye Knappenberger
  */
 public class Terry {
 
