@@ -2,6 +2,18 @@
   "configurations": [
     {
       "type": "java",
+      "name": "CodeLens (Launch) - ProblemA",
+      "request": "launch",
+      "mainClass": "ProblemA"
+    },
+    {
+      "type": "java",
+      "name": "CodeLens (Launch) - IntegerDivision",
+      "request": "launch",
+      "mainClass": "IntegerDivision"
+    },
+    {
+      "type": "java",
       "name": "CodeLens (Launch) - TiredTerryV3",
       "request": "launch",
       "mainClass": "TiredTerryV3"
