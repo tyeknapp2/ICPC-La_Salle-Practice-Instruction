@@ -26,7 +26,6 @@ public class TiredTerryV3 {
     }
     int tiredness = 0;
     for (int i = 0; i < s.length(); i++) {
-
       char c = timer.remove();
       sleep -= (c == 'Z' ? 1 : 0);
       sleep += (s.charAt(i) == 'Z' ? 1 : 0);
