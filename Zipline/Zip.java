@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+import sun.print.resources.serviceui;
+
 /**
  * Zip
  * 
@@ -15,8 +17,7 @@ public class Zip {
       int g = scan.nextInt();
       int h = scan.nextInt();
       int r = scan.nextInt();
-      System.out.print(minDist(w, g, h) + " ");
-
+      System.out.print(minDist(w, g, h) + " " + maxDist(w, g, h, r));
       System.out.println();
     }
     scan.close();
@@ -29,6 +30,6 @@ public class Zip {
 
   public static double maxDist(int w, int g, int h, int r) {
     double l1 = 0;
-    return 0;
+    return l1;
   }
 }
