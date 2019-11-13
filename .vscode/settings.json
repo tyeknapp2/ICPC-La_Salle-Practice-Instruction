@@ -2,6 +2,7 @@
   "java.dependency.syncWithFolderExplorer": true,
   "java.dependency.packagePresentation": "hierarchical",
   "files.associations": {
-    "string": "cpp"
+    "string": "cpp",
+    "iosfwd": "cpp"
   }
 }
