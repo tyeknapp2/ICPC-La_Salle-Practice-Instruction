@@ -1,6 +1,5 @@
 import java.util.Scanner;
-
-public class Cake {
+public class Cake { 
   public static void main(String[] args) {
     Scanner scan = new Scanner(System.in);
     int n = scan.nextInt();
