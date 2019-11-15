@@ -3,6 +3,7 @@
   "java.dependency.packagePresentation": "hierarchical",
   "files.associations": {
     "string": "cpp",
-    "iosfwd": "cpp"
+    "iosfwd": "cpp",
+    "utility": "cpp"
   }
 }

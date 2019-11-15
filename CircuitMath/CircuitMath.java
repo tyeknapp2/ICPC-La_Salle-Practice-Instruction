@@ -41,40 +41,44 @@ public class CircuitMath {
 
     // this evaluates the expression
     for (int i = 0; i < postfixExpression.length(); i++) {
-      if (postfixExpression.charAt(i) == ' ') {
-        // this skips the spaces
-        continue;
-      } else if (postfixExpression.charAt(i) == '*') {
-        /*
-         * This handles AND gates
-         * 
-         * Java Stacks are weird you cannot do these three statements on one line
-         * because when I did put it on one line it was pushing everything back onto the
-         * stack. I don't know why that happened, whether it is a design flaw or
-         * intentional or whether it was with push or pop. Just know that when you
-         * actually want to pop something out of the stack that should go on its own
-         * line
-         *
-         */
-        boolean t = stackCalculator.pop();
-        boolean h = stackCalculator.pop();
-        stackCalculator.push(t && h);
-      } else if (postfixExpression.charAt(i) == '+') {
-        // This handles OR gates
-        boolean t = stackCalculator.pop();
-        boolean h = stackCalculator.pop();
-        stackCalculator.push(t || h);
-      } else if (postfixExpression.charAt(i) == '-') {
-        // This handles NOT gates
-        boolean t = !stackCalculator.pop();
-        stackCalculator.push(t);
-      } else {
-        // This handles inputs
-        stackCalculator.push(inputs.get(postfixExpression.charAt(i)));
-      }
+      evalPostfix(inputs, stackCalculator, postfixExpression, i);
     }
 
     // this pops out the answer, thransforms it and prints it
     System.out.println((stackCalculator.pop() ? 'T' : 'F'));
+  }
+
+  private static void evalPostfix(HashMap<Character, Boolean> inputs, Stack<Boolean> stackCalculator,
+      String postfixExpression, int i) {
+    if (postfixExpression.charAt(i) == ' ') {
+      return;
+    } else if (postfixExpression.charAt(i) == '*') {
+      /*
+       * This handles AND gates
+       * 
+       * Java Stacks are weird you cannot do these three statements on one line
+       * because when I did put it on one line it was pushing everything back onto the
+       * stack. I don't know why that happened, whether it is a design flaw or
+       * intentional or whether it was with push or pop. Just know that when you
+       * actually want to pop something out of the stack that should go on its own
+       * line
+       *
+       */
+      boolean t = stackCalculator.pop();
+      boolean h = stackCalculator.pop();
+      stackCalculator.push(t && h);
+    } else if (postfixExpression.charAt(i) == '+') {
+      // This handles OR gates
+      boolean t = stackCalculator.pop();
+      boolean h = stackCalculator.pop();
+      stackCalculator.push(t || h);
+    } else if (postfixExpression.charAt(i) == '-') {
+      // This handles NOT gates
+      boolean t = !stackCalculator.pop();
+      stackCalculator.push(t);
+    } else {
+      // This handles inputs
+      stackCalculator.push(inputs.get(postfixExpression.charAt(i)));
+    }
   }
 }
